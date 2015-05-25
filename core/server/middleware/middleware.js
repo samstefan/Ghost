@@ -115,6 +115,10 @@ middleware = {
             return a;
         });
 
+        if (path.indexOf('/ghost/api/v0.1/public') === 0) {
+            return next();
+        }
+
         if (subPath.indexOf('/ghost/api/') === 0
             && path.indexOf('/ghost/api/v0.1/authentication/') !== 0) {
             return passport.authenticate('bearer', {session: false, failWithError: true},
