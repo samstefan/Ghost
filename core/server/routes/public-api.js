@@ -6,8 +6,6 @@ var express     = require('express'),
 apiRoutes = function () {
     var router = express.Router();
 
-    console.log(api.posts.browse());
-
     // ## Posts
     router.get('/public/posts', api.http(api.posts.browse));
 
