@@ -315,6 +315,10 @@ setupMiddleware = function (blogAppInstance, adminApp) {
     blogApp.use(ghostLocals);
 
     // ### Routing
+
+    // Set up public routes
+    blogApp.use(routes.apiBaseUri, routes.publicApi());
+
     // Set up API routes
     blogApp.use(routes.apiBaseUri, routes.api(middleware));
 
